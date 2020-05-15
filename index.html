@@ -28,7 +28,9 @@
 
             function playSingleRound(playerSelection, computerSelection) {
                 let playerChoiceCaseIns = playerSelection.toLowerCase();
+                console.log(playerChoiceCaseIns);
                 let computerChoiceCaseIns = computerSelection.toLowerCase();
+                console.log(computerChoiceCaseIns);
 
                 if (playerChoiceCaseIns == computerChoiceCaseIns) {
                     return 'Whoops! Looks like a tie!';
@@ -42,6 +44,19 @@
                         return `You lose because ${computerChoiceCaseIns} beats ${playerChoiceCaseIns}!`;
                     }
             }
+
+            function game() {
+                
+                let playerChoice = prompt('Rock, Paper, or Scissors?');
+                console.log(playerChoice);
+                let computerChoice = computerPlay();
+                console.log(computerChoice);
+
+                playSingleRound(playerChoice, computerChoice);
+            }
+
+            game();
+
         </script>
     </body>
 </html>
