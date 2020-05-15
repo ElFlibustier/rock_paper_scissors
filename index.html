@@ -12,7 +12,37 @@
     <body>
         <h1>HELLO</h1>
         <script>
+            function computerPlay() {
+                let computerSelection = Math.floor(Math.random() * 3);
 
+                if (computerSelection == 0) {
+                    return 'Rock';
+                } else if (computerSelection == 1) {
+                    return 'Paper';
+                } else if (computerSelection == 2) {
+                    return 'Scissors';
+                } else {
+                    return 'Not a valid throw! Try again!';
+                }
+            }
+
+            function playSingleRound(playerSelection, computerSelection) {
+                let playerChoiceCaseIns = playerSelection.toLowerCase();
+                let computerChoiceCaseIns = computerSelection.toLowerCase();
+
+                if (playerChoiceCaseIns == computerChoiceCaseIns) {
+                    return 'Whoops! Looks like a tie!';
+                } else if (
+                    playerChoiceCaseIns == 'rock' && computerChoiceCaseIns == 'scissors'
+                    || playerChoiceCaseIns == 'paper' && computerChoiceCaseIns == 'rock'
+                    || playerChoiceCaseIns == 'scissors' && computerChoiceCaseIns == 'paper'
+                    ) {
+                        return `You won because ${playerChoiceCaseIns} beats ${computerChoiceCaseIns}!`;
+                    } else {
+                        return `You lose because ${computerChoiceCaseIns} beats ${playerChoiceCaseIns}!`;
+                    }
+            }
         </script>
     </body>
 </html>
+
